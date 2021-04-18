@@ -1,0 +1,128 @@
+<%= render "common/flash" %>
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+  <!-- Topbar Search -->
+  <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+          <i class="fas fa-search fa-sm"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <!-- Topbar Navbar -->
+  <ul class="navbar-nav ml-auto">
+    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+    <li class="nav-item dropdown no-arrow d-sm-none">
+      <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-search fa-fw"></i>
+      </a>
+      <!-- Dropdown - Messages -->
+      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+        <form class="form-inline mr-auto w-100 navbar-search">
+          <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">
+                <i class="fas fa-search fa-sm"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </li>
+    <!-- Nav Item - Alerts -->
+    <li class="nav-item dropdown no-arrow mx-1">
+      <%= link_to "#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
+
+        <% if I18n.locale == "vi" %>
+            <%= image_tag("languages/EN.png", alt: t("menu_list.languages.english"), style: "width:30px") %>
+        <% else %>
+            <%= image_tag("languages/VN.png", alt: t("menu_list.languages.english"), style: "width:30px") %>
+        <% end %>
+
+        <b class="caret"></b>
+      <% end %>
+      <ul class="dropdown-menu p-3">
+        <li class="nav-item">
+          <%= link_to locale: :en do %>
+            <%= image_tag("languages/EN.png", alt: t("menu_list.languages.english"), style: "width:30px") %>
+            <%= t "menu_list.languages.english" %>
+          <% end %>
+        </li>
+        <hr>
+        <li class="nav-item">
+          <%= link_to locale: :vi do %>
+            <%= image_tag("languages/VN.png", alt: t("menu_list.languages.vietnamese"), style: "width:30px") %>
+            <%= t "menu_list.languages.vietnamese" %>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <!-- Nav Item - User Information -->
+    <li class="nav-item dropdown no-arrow">
+      <% if logged_in? %>
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.full_name %></span>
+          <%= image_tag current_user.avatar, class:"img-profile rounded-circle" %>
+        </a>
+      <% else %>
+        <%= link_to "Login", login_path, class:"nav-link" %>
+      <% end %>
+      <!-- Dropdown - User Information -->
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+        <ul class="p-3">
+          <li class="nav-item text-center">
+            <% if current_user.avatar.attached? %>
+              <%= image_tag(current_user.avatar, alt: current_user.full_name, class: "rounded-circle img-avt img-avt-sm") %>
+            <% else %>
+              <%= image_tag("avatars/user-avt.png", alt: current_user.full_name, class: "rounded-circle img-avt img-avt-sm") %>
+            <% end %>
+          </li>
+          <li class="nav-item text-center">
+            <strong><%= current_user.full_name %></strong>
+            <small><%= current_user.email %></small>
+          </li>
+          <hr>
+          <li class="nav-item text-center"><%= link_to t("menu_list.edit_profile"), edit_users_path, class:"btn btn-primary w-100 mb-2" %></li>
+          <li class="nav-item text-center"><%= link_to t("update.update_passwd"), change_password_users_path, class:"btn btn-primary w-100 mb-2" %></li>
+          <li class="nav-item text-center"><%= link_to t("menu_list.logout"), logout_path, class:"btn btn-primary w-100", method: :delete %></li>
+        <ul>
+    </li>
+  </ul>
+</nav>
+<!-- End of Topbar -->
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <%= link_to t("menu_list.logout"), logout_path, class:"btn btn-primary", method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

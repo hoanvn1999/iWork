@@ -1,0 +1,35 @@
+<%= render "common/header" %>
+
+<div class="hero-wrap js-fullheight d-sm-none d-lg-block">
+  <div class="overlay js-fullheight"></div>
+  <div class="container">
+    <div class="row slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+      <div class="col-md-7">
+        <h1><%= t "index.title" %></h1>
+        <span class="subheading"><%= t "index.slogan" %></span>
+      </div>
+      <% if current_user.blank?%>
+        <div class="col-md-4 create-cv ml-auto">
+          <div class="subheading"><%= t "index.booking_now" %></div>
+          <%= link_to "#", class: "icon-video d-flex align-items-center justify-content-center" do %><!-- change -->
+            <span class="fa fa-play"></span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center">
+        <h2 class="mb-4"><%= t "menu_list.list_job" %></h2>
+      </div>
+    </div>
+    <div id="jobs" class="row">
+      <%= render partial: "homepages/job", collection: @jobs %>
+    </div>
+    <div class="w-100 text-center"><%= link_to t("btn.more"), jobs_path, class: "btn btn-success" %></div>
+  </div>
+</section>

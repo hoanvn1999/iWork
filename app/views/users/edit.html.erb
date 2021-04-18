@@ -1,0 +1,67 @@
+<section class="bg-gradient-primary js-fullheight">
+  <div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4"><%= t "menu_list.edit_profile" %></h1>
+                  </div>
+                  <%= form_for @user, url: users_path do |f| %>
+                    <div class="signin-form">
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <%= f.label :avatar do%>
+                            <%= f.file_field :avatar, accept:"image/*", class:"d-none" %>
+                            <% if current_user.avatar.attached? %>
+                              <%= image_tag(current_user.avatar, alt: current_user.full_name, id:"output_image", class:"img-avt") %>
+                            <% else %>
+                              <%= image_tag("avatars/user-avt.png", alt: current_user.full_name, id:"output_image", class:"img-avt") %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <%= f.text_field :full_name, class: "form-control", placeholder: "#{t("register.full_name")}" %>
+                          </div>
+                          <div class="form-group">
+                            <%= f.select :role, [[t("register.roles.renter"), :renter], [t("register.roles.freelancer"), :freelancer]], {}, class: "form-control" %>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <%= f.text_field :phone_number, class: "form-control", placeholder: "#{t("register.phone")}" %>
+                          </div>
+                          <div class="form-group">
+                            <%= f.date_field :date_of_birth, class: "form-control" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <%= f.text_field :address, class: "form-control", placeholder: "#{t("register.address")}" %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <%= link_to t("btn.close"), root_path, class: "form-control btn btn-white col-5 mx-auto" %>
+                        <%= f.submit t("update.btn"), class: "form-control btn btn-primary submit px-3 col-5 mx-auto" %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

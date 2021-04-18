@@ -1,0 +1,11 @@
+<tr>
+  <td><%= image_tag job.job_image, class:"rounded-circle img-job" %></td>
+  <td><%= job.title %></td>
+  <td><%= t("price", price: exchange_money(job.salary)) %></td>
+  <td><%= l(job.date,format: :notime) %></td>
+  <td><%= job.number_of_staffs %></td>
+  <td>
+    <button class="btn btn-warning">Sửa</button>
+    <button class="btn btn-danger">Xóa</button>
+  </td>
+</tr>

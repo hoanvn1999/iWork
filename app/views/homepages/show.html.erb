@@ -1,0 +1,29 @@
+<%= render "common/header" %>
+
+<div class="hero-wrap d-sm-none d-lg-block" style="height: 75px">
+  <div class="overlay" style="height: 75px"></div>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @job.job_image, class:"img-fluid" %>
+      </div>
+      <div class="col-md-8">
+        <h3 class="card-title"><%= @job.title %></h3>
+        <p class="card-text"><span class="font-weight-bold"><%= t "job.salary" %>: </span> <%= t("price", price: exchange_money(@job.salary)) %></p>
+        <p class="card-text"><span class="font-weight-bold"><%= t "job.date" %>: </span> <%= l(@job.date,format: :notime) %></p>
+        <p class="card-text"><span class="font-weight-bold"><%= t "job.quantity" %>: </span><%= @job.number_of_staffs %></p>
+        <div class="text-center"><%= link_to t("btn.apply"), "#", class: "btn btn-primary" %></div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <h5 class="font-weight-bold">
+        <%= t "space.description" %>
+      </h5>
+      <br>
+      <%= @job.description %>
+    </div>
+  </div>
+</section>

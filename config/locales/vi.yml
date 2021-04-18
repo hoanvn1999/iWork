@@ -1,0 +1,117 @@
+vi:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%H:%M"
+      notime: "%m/%d/%Y"
+  price: "%{price} VND"
+  btn:
+    more: "Xem thêm"
+    book: "Đặt chỗ"
+    close: "Thoát"
+    search: "Tìm kiếm"
+    apply: "Ứng tuyển"
+  email:
+    btn:
+      active: "Kích hoạt"
+      reset_passwd: "Lấy lại mật khẩu"
+    subject:
+      active_account: "iWork | Kích hoạt tài khoản"
+      password_reset: "Fast Recruitment | Đặt lại mật khẩu"
+    hi: "Chào"
+    message:
+      active_account: "Chào mừng bạn đến với iWork! Click vào link bên dưới để kích hoạt tài khoản của bạn:"
+      reset_passwd: "Chúng tôi nhận được yêu cầu thay đổi mật khẩu. Nếu bạn không thực hiện hành động này, vui lòng bỏ qua email này và tiếp tục sử dụng. Để đổi mật khẩu, vui lòng click vào link bên dưới:"
+    signature: "Trân trọng, <br>Đội ngũ iWork"
+  account:
+    activated: "Tài khoản đã được kích hoạt!"
+    invalid_active_link: "Link kích hoạt không chính xác"
+    invalid_reset_passwd_link: "Link đổi mật khẩu không chính xác"
+    account_nil: "Tài khoản không tồn tại"
+    create_fail: "Đăng ký thất bại. Có lỗi xảy ra, vui lòng kiểm tra lại thông tin "
+    check_email: "Vui lòng kiểm tra email và xác nhận."
+    profile_updated: "Thông tin cá nhân của bạn đã được thay đổi thành công"
+    update_fail: "Cập nhật thất bại, vui lòng kiểm tra lại thông tin "
+    passwd_updated: "Mật khẩu của bạn đã được thay đổi thành công"
+    change_pwd_fail: "Đổi mật khẩu thất bại, vui lòng kiểm tra lại thông tin "
+  index:
+    title: "iWork"
+    slogan: "Nhân sự tức thời - có việc tức thì"
+    booking_now: "Tìm việc ngay"
+    prev: "Trước"
+    next: "Sau"
+    list: "Danh sách"
+  menu_list:
+    menu: "Menu"
+    home: "Trang chủ"
+    spaces: "DS Co-working space"
+    languages:
+      language: "Ngôn ngữ"
+      english: "English"
+      vietnamese: "Tiếng Việt"
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
+    register: "Đăng ký"
+    edit_profile: Sửa thông tin
+    list_job: "Danh sách công việc"
+  term:
+    terms_of_use: "Điều khoản sử dụng"
+    privacy_and_policy: "Chính sách và bảo mật"
+    user_manual: "Hướng dẫn sử dụng"
+  contact:
+    contact: "Liên hệ"
+    address: "254 Nguyễn Văn Linh, Thanh Khê, Đà Nẵng"
+  about:
+    about_us: "Về chúng tôi"
+    description: "iWork là một ứng dụng tìm kiếm công việc bán thời gian tiện lợi."
+  login:
+    username: "Email"
+    passwd: "Mật khẩu"
+    remember_me: "Ghi nhớ"
+    first: "Bạn phải đăng nhập trước khi sử dụng"
+    btn_send_email: "Gửi email"
+    forgot_passwd: "Quên mật khẩu"
+    or_with: "Hoặc đăng nhập với"
+    invalid_user: "Sai email hoặc mật khẩu"
+    check_activation_link: "Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email."
+  register:
+    passwd_conf: "Xác nhận mật khẩu"
+    full_name: "Họ và tên"
+    phone: "Số điện thoại"
+    birthday: "Sinh nhật"
+    address: "Địa chỉ"
+    btn_next: "Tiếp theo"
+    btn_prev: "Quay lại"
+    roles:
+      renter: "Người thuê"
+      freelancer: "Freelancer"
+      admin: "Quản trị viên"
+  reset_passwd:
+      email_sent: "Email đã được gửi kèm yêu cầu đổi mật khẩu mới"
+      email_nil: "Không tìm thấy địa chỉ email"
+      input_field: "Vui lòng nhập mật khẩu"
+      expired: "Yêu cầu đổi mật khẩu đã hết hạn"
+  update:
+    btn: "Cập nhật"
+    update_passwd: "Đổi mật khẩu"
+    old_passwd: "Mật khẩu cũ"
+  space:
+    name: "Tên"
+    address: "Địa chỉ"
+    description: "Mô tả"
+    price: "Đơn giá"
+    area: "Diện tích"
+  book:
+    success: "Đặt chỗ thành công"
+    fail: "Đặt chỗ thất bại"
+    start_time: "Ngày bắt đầu"
+    end_time: "Ngày kết thúc"
+    position: "Vị trí"
+  job:
+    salary: "Trợ cấp"
+    date: "Ngày"
+    quantity: "Số lượng"

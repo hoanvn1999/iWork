@@ -1,0 +1,117 @@
+en:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%H:%M"
+      notime: "%d/%m/%Y"
+  price: "$%{price}"
+  btn:
+    more: "Watch more"
+    book: "Booking"
+    close: "Close"
+    search: "Search"
+    apply: "Apply"
+  email:
+    btn:
+      active: "Activate"
+      reset_passwd: "Reset password"
+    subject:
+      active_account: "FastRecruitment | Account activation"
+      password_reset: "FastRecruitment | Password reset"
+    hi: "Hi"
+    message:
+      active_account: "Welcome to the Co-Worker! Click on the link below to activate your account:"
+      reset_passwd: "We receive a request to change your password. If you don't take this action, please ignore this email and continue using it. To change your password, please click on the link below:"
+    signature: "Best regards, <br>The Co-Worker team"
+  account:
+    activated: "Account activated!"
+    invalid_active_link: "Invalid activation link"
+    invalid_reset_passwd_link: "Invalid reset password link"
+    account.nil: "Account is not exist"
+    create_fail: "Login failed. An error occurred, please check the information again"
+    check_email: "Please check your email to active your account."
+    profile_updated: "Your personal information has been successfully changed"
+    update_fail: "Update failed, please check the information again"
+    passwd_updated: "Your password has been successfully changed"
+    change_pwd_fail: "Change password failed, please check the information again"
+  index:
+    title: "iWork"
+    slogan: "Instant staffing - instant work"
+    booking_now: "Get a job now"
+    prev: "Previous"
+    next: "Next"
+    list: "Lists"
+  menu_list:
+    menu: "Menu"
+    home: "Home"
+    spaces: "Co-working spaces"
+    languages:
+      language: "Language"
+      english: "English"
+      vietnamese: "Tiếng Việt"
+    login: "Login"
+    logout: "Logout"
+    register: "Register"
+    edit_profile: "Edit profile"
+    list_job: "List jobs"
+  term:
+    terms_of_use: "Terms of use"
+    privacy_and_policy: "Privacy and Policy"
+    user_manual: "User manual"
+  contact:
+    contact: "Contact"
+    address: "254 Nguyen Van Linh St, Thanh Khe, Da Nang"
+  about:
+    about_us: "About Us"
+    description: "iWork is a convenient work booking app."
+  login:
+    username: "Email"
+    passwd: "Password"
+    remember_me: "Remember me"
+    first: "You have to login first"
+    btn_send_email: "Send me email"
+    forgot_passwd: "Forgot password"
+    or_with: "Or Sign In With"
+    invalid_user: "Wrong email or password"
+    check_activation_link: Account not activated. Check your email for the activation link."
+  register:
+    passwd_conf: "Confirm password"
+    full_name: "Fullname"
+    phone: "Phone number"
+    birthday: "Birthday"
+    address: "Address"
+    btn_next: "Next step"
+    btn_prev: "Previous step"
+    roles:
+      renter: "Renter"
+      freelancer: "Freelancer"
+      admin: "Admin"
+    reset_passwd:
+      email_sent: "Email sent with password reset instructions"
+      email_nil: "Email address not found"
+      input_field: "Please enter password"
+      expired: "Password reset has expired."
+  update:
+    btn: "Update"
+    update_passwd: "Change password"
+    old_passwd: "Old password"
+  space:
+    name: "Space name"
+    address: "Address"
+    description: "Description"
+    price: "Price"
+    area: "Area"
+  book:
+    success: "Booking success"
+    fail: "Booking fail"
+    start_time: "Start date"
+    end_time: "End date"
+    position: "Position"
+  job:
+    salary: "Salary"
+    date: "Date"
+    quantity: "Number of staff"

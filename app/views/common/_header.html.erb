@@ -1,0 +1,70 @@
+<%= render "common/flash" %>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      iWork
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+			aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> <%= t "menu_list.menu" %>
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item <%= current_class?("homepages") %>"><%= link_to t("menu_list.home"), root_path, class:"nav-link" %></li>
+        <li class="nav-item dropdown">
+          <%= link_to "#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
+            <%= t "menu_list.languages.language" %>
+            <b class="caret"></b>
+          <% end %>
+          <ul class="dropdown-menu p-3">
+            <li class="nav-item">
+              <%= link_to locale: :en do %>
+                <%= image_tag("languages/EN.png", alt: t("menu_list.languages.english"), class: "img-lang") %>
+                <%= t "menu_list.languages.english" %>
+              <% end %>
+            </li>
+            <hr>
+            <li class="nav-item">
+              <%= link_to locale: :vi do %>
+                <%= image_tag("languages/VN.png", alt: t("menu_list.languages.vietnamese"), class: "img-lang") %>
+                <%= t "menu_list.languages.vietnamese" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class:"nav-link dropdown-toggle", "data-toggle": "dropdown" do %>
+              <% if current_user.avatar.attached? %>
+                <%= image_tag(current_user.avatar, alt: current_user.full_name, class: "rounded-circle img-avt") %>
+              <% else %>
+                <%= image_tag("avatars/user-avt.png", alt: current_user.full_name, class: "rounded-circle img-avt") %>
+              <% end %>
+            <% end %>
+            <ul class="dropdown-menu p-3">
+              <li class="nav-item text-center">
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag(current_user.avatar, alt: current_user.full_name, class: "rounded-circle img-avt-sm") %>
+                <% else %>
+                  <%= image_tag("avatars/user-avt.png", alt: current_user.full_name, class: "rounded-circle img-avt-sm") %>
+                <% end %>
+              </li>
+              <li class="nav-item text-center">
+                <strong><%= current_user.full_name %></strong>
+                <small><%= current_user.email %></small>
+              </li>
+              <hr>
+              <li class="nav-item text-center"><%= link_to t("menu_list.edit_profile"), edit_users_path, class:"btn btn-primary w-100 mb-2" %></li>
+              <li class="nav-item text-center"><%= link_to t("update.update_passwd"), change_password_users_path, class:"btn btn-primary w-100 mb-2" %></li>
+              <li class="nav-item text-center"><%= link_to t("menu_list.logout"), logout_path, class:"btn btn-primary w-100", method: :delete %></li>
+            <ul>
+          </li>
+        <% else %>
+          <li class="nav-item <%= current_class?("sessions") %>"><%= link_to t("menu_list.login"), login_path, class:"nav-link" %></li>
+          <li class="nav-item <%= current_class?("users") %> cta ml-4"><%= link_to t("menu_list.register"), new_users_path, class:"nav-link" %></li>
+        <% end %>
+      </li>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->

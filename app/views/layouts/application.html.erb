@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t "index.title" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path("favicon.ico") %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body id="page-top">
+    <% if !["sessions", "password_resets", "users", "homepages"].include?(params[:controller]) %>
+      <div id="wrapper">
+        <%= render "common/left_bar" %>
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <%= render "common/top_bar" %>
+          <% end %>
+          <%= yield %>
+          <% if !["sessions", "password_resets", "users"].include?(params[:controller]) %>
+          </div>
+          <%= render "common/footer" %>
+        </div>
+      </div>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    <% end %>
+    <%= javascript_pack_tag "theme", "data-turbolinks-track": "reload" %>
+  </body>
+</html>
